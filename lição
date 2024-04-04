@@ -1,0 +1,26 @@
+import os
+
+def salvar_dados(pedido_cliente, adicionais, nome_cliente, endereco, observacao):
+    with open('sistema_pizzaria.txt' 'a') as arquivo:
+        arquivo.write(f'Pedido do CLiente: {pedido_cliente}\n')
+        arquivo.write(f'Adicionais do Pedido: {adicionais}\n')
+        arquivo.write(f'Nome do Cliente: {nome_cliente}\n')
+        arquivo.write(f'Endereço de Entrega: {endereco}\n')
+        arquivo.write(f'Observação do Pedido: {observacao}\n')
+
+def menu():
+    print("Sistema Pizzaria")
+    pedido_cliente = input ("Informe o Pedido: ")
+    adicionais = input("Informe os adicionais: ")
+    nome_cliente = input("Informe seu Nome: ")
+    endereco = input("Insira o Endereço de Entrega: ")
+    observacao = input("Alguma Observação? : ")
+    salvar_dados(pedido_cliente, adicionais, nome_cliente, endereco, observacao)
+    print("Dados salvos com sucesso! ")
+
+if  __name__ ==  "_main_":
+      while True:
+          menu()
+          continuar = input("Deseja fazer outro pedido? (s/n): ")
+          if continuar.lower() != 's' :
+              break
